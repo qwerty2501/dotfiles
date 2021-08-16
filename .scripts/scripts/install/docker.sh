@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-curl -fsSL https://get.docker.com/rootless | sh
+
+if [ ! "$(command -v docker)" ]; then
+    curl -fsSL https://get.docker.com/rootless | sh
+fi

@@ -2,5 +2,5 @@
 
 sudo apt update
 sudo apt install -y build-essential
-wd=$(chezmoi source-path)
+wd=$($HOME/bin/chezmoi source-path)
 make -j -C $wd/.scripts bootstrap

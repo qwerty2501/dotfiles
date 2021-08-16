@@ -8,13 +8,13 @@ install/node_tools:
 
 .PHONY: install/base_apt
 install/base_apt:
-	install/base_apt.sh
+	$(CURDIR)/scripts/install/base_apt.sh
 .PHONY: install/apt
 install/apt: install/base_apt
 	$(CURDIR)/scripts/install/apt.sh
 
 .PHONY: install/docker
-install/docker:
+install/docker: install/apt
 	$(CURDIR)/scripts/install/docker.sh
 
 
@@ -22,13 +22,13 @@ install/docker:
 install/rust:
 	$(CURDIR)/scripts/install/rust.sh
 
-.PHONY: install/cargo_tools
-install/cargo_tools: install/rust
-	$(CURDIR)/scripts/install/cargo_tools.sh
-
 .PHONY: install/rustup_components
 install/rustup_components: install/rust
 	$(CURDIR)/scripts/install/rustup_components.sh
+
+.PHONY: install/cargo_tools
+install/cargo_tools: install/rustup_components
+	$(CURDIR)/scripts/install/cargo_tools.sh
 
 .PHONY: environment/env
 environment/env: install/apt

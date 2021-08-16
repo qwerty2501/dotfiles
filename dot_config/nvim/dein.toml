@@ -92,6 +92,8 @@ repo = 'mattn/vim-sqlfmt'
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
+rev = 'master'
+build = 'yarn install --frozen-lockfile'
 
 
 [[plugins]]

@@ -15,4 +15,3 @@ mysql-client
 libxcb-composite0-dev
 libssl-dev
 pkg-config
-gh
