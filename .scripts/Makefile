@@ -34,5 +34,7 @@ install/rustup_components: install/rust
 environment/env: install/apt
 	$(CURDIR)/scripts/environment/env.sh
 
+.PHONY: install
+install: install/docker install/cargo_tools install/node_tools install/apt install/rustup_components install/cargo_tools
 .PHONY: bootstrap
-bootstrap: install/docker install/cargo_tools install/node_tools install/apt install/rustup_components install/cargo_tools environment/env
+bootstrap: install environment/env
