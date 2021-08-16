@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 
-sudo apt update
-sudo apt install -y build-essential
-wd=$(dirname $0)
-make -j -C $wd/.scripts bootstrap
+$(chezmoi source-path)/.scripts/init.sh
+exit 0
