@@ -30,6 +30,7 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+set paste
 
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*ts,*.tsx,*.less,*.md,*.json,*.graphql,*.vue,*.{yaml,yml},*.css,*.scss,*.html,.postcssrc,.posthtmlrc :Prettier
