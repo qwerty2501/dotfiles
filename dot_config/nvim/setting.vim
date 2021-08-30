@@ -7,7 +7,7 @@ set belloff=all
 syntax on
 set tabstop=2
 set smartindent
-set clipboard+=unnamedplus
+set clipboard=unnamed,unnamedplus
 set noswapfile
 let g:netrw_liststyle= 3
 set mouse=a
