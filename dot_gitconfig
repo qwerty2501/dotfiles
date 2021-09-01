@@ -1,6 +1,0 @@
-[user]
-	name = qwerty2501
-	email = 939468+qwerty2501@users.noreply.github.com
-[url "git@bitbucket.org:"]
-	insteadOf = https://bitbucket.org/
-	insteadOf = https://api.bitbucket.org/
