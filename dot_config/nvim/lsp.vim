@@ -19,7 +19,7 @@ let g:coc_global_extensions = [
       \  'coc-vimlsp',
       \  'coc-docker',
       \  'coc-json',
-      \  'coc-jedi',
+      \  'coc-pyright',
       \  'coc-rust-analyzer',
       \  'coc-snippets',
       \  'coc-solargraph',
