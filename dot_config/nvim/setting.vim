@@ -34,7 +34,6 @@ set binary
 set noeol
 
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*ts,*.tsx,*.less,*.md,*.json,*.graphql,*.vue,*.{yaml,yml},*.css,*.scss,*.html,.postcssrc,.posthtmlrc :Prettier
 autocmd BufRead,BufNewFile .postcssrc,.posthtmlrc            set filetype=json
 autocmd BufRead,BufNewFile .ansible-lint set filetype=yaml
 let g:deoplete#enable_at_startup = 1
