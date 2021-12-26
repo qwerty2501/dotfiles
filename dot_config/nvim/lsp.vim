@@ -31,7 +31,8 @@ let g:coc_global_extensions = [
       \  'coc-tsserver',
       \  'coc-sh',
       \  'coc-graphql',
-      \  'coc-toml'
+      \  'coc-toml',
+      \  'coc-vetur',
       \ ]
 
 
