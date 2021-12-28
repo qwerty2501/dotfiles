@@ -34,6 +34,24 @@ set binary
 set noeol
 set spelllang=en,cjk
 
+fun! s:SpellConf()
+  redir! => syntax
+  silent syntax
+  redir END
+
+  set spell
+
+  if syntax =~? '/<comment\>'
+    syntax spell default
+    syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent containedin=Comment contained
+  else
+    syntax spell toplevel
+    syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent
+  endif
+
+  syntax cluster Spell add=SpellNotAscii,SpellMaybeCode
+endfunc
+
 let g:prettier#autoformat = 0
 autocmd BufRead,BufNewFile .postcssrc,.posthtmlrc            set filetype=json
 autocmd BufRead,BufNewFile .ansible-lint set filetype=yaml
@@ -61,5 +79,10 @@ if g:on_microsoft
         autocmd TextYankPost * :call system('clip.exe', @")
     augroup END
 endif
+
+augroup spell_check
+  autocmd!
+  autocmd BufReadPost,BufNewFile,Syntax * call s:SpellConf()
+augroup END
 colorscheme gruvbox
 hi NonText ctermfg=12 guifg=#2D3640
