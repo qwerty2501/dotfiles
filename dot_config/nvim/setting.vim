@@ -32,7 +32,7 @@ set updatetime=300
 set shortmess+=c
 set binary
 set noeol
-set spelling=en,cjk
+set spelllang=en,cjk
 
 let g:prettier#autoformat = 0
 autocmd BufRead,BufNewFile .postcssrc,.posthtmlrc            set filetype=json
