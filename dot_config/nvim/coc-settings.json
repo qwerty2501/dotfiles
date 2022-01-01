@@ -28,6 +28,7 @@
   "rust-analyzer.procMacro.enable": true,
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.checkOnSave.extraArgs": ["--tests"],
+  "cSpell.language": "en",
   "go.goplsOptions": {
     "gofumpt": true
   }
