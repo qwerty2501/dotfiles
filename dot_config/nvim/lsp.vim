@@ -33,6 +33,7 @@ let g:coc_global_extensions = [
       \  'coc-graphql',
       \  'coc-toml',
       \  'coc-vetur',
+      \  'coc-cmake'
       \ ]
 
 
