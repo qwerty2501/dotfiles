@@ -49,6 +49,6 @@ export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 
 
-if [ -e "$HOME/.local_profile" ] ; then
+if [ -f "$HOME/.local_profile" ] ; then
 		source $HOME/.local_profile
 fi
