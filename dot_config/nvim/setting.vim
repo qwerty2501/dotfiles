@@ -30,8 +30,7 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
-set binary
-set noeol
+set binary noeol
 
 let g:prettier#autoformat = 0
 autocmd BufRead,BufNewFile .postcssrc,.posthtmlrc            set filetype=json
