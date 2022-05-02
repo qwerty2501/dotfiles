@@ -51,3 +51,7 @@ if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-clo
 if [ -e "$HOME/.local_bashrc" ] ; then
 		source $HOME/.local_bashrc
 fi
+
+if [ -e . "$HOME/.cargo/env" ] ; then
+  . "$HOME/.cargo/env"
+fi
