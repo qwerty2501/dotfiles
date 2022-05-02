@@ -19,6 +19,12 @@
       "initializationOptions": {
         "cache": {
           "directory": "/tmp/ccls"
+        },
+        "client": {
+          "snippetSupport": true
+        },
+        "clang": {
+          "extraArgs": ["-std=c++20"]
         }
       }
     }
