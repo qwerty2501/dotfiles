@@ -52,3 +52,8 @@ export DOCKER_HOST=unix:///run/user/1000/docker.sock
 if [ -f "$HOME/.local_profile" ] ; then
 		source $HOME/.local_profile
 fi
+
+if [ -e . "$HOME/.cargo/env" ] ; then
+  . "$HOME/.cargo/env"
+fi
+
