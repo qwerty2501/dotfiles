@@ -32,7 +32,7 @@ if [ -f "$HOME/.bash_aliases" ]; then
     . "$HOME/.bash_aliases"
 fi
 # BEGIN ANSIBLE MANAGED BLOCK: asdf
-if [ -e "$HOME/.asdf/asdf.sh" ]; then
+if [ -f "$HOME/.asdf/asdf.sh" ]; then
   source $HOME/.asdf/asdf.sh
   source $HOME/.asdf/completions/asdf.bash
 fi
@@ -48,10 +48,10 @@ if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-clo
 
 
 
-if [ -e "$HOME/.local_bashrc" ] ; then
+if [ -f "$HOME/.local_bashrc" ] ; then
 		source $HOME/.local_bashrc
 fi
 
-if [ -e "$HOME/.cargo/env" ] ; then
+if [ -f "$HOME/.cargo/env" ] ; then
   source $HOME/.cargo/env
 fi
