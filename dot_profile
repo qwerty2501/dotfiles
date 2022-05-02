@@ -53,7 +53,7 @@ if [ -f "$HOME/.local_profile" ] ; then
 		source $HOME/.local_profile
 fi
 
-if [ -e . "$HOME/.cargo/env" ] ; then
+if [ -f "$HOME/.cargo/env" ] ; then
   source $HOME/.cargo/env
 fi
 
