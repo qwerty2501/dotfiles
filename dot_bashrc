@@ -53,5 +53,5 @@ if [ -e "$HOME/.local_bashrc" ] ; then
 fi
 
 if [ -e . "$HOME/.cargo/env" ] ; then
-  . "$HOME/.cargo/env"
+  source $HOME/.cargo/env
 fi
