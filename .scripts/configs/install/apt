@@ -16,3 +16,4 @@ libxcb-composite0-dev
 libssl-dev
 pkg-config
 ccls
+cmake-format
