@@ -1,4 +1,4 @@
-[[plugins]] 
+[[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
@@ -17,7 +17,6 @@ repo = 'prabirshrestha/async.vim'
 
 [[plugins]]
 repo = 'junegunn/fzf'
-
 
 
 [[plugins]]
@@ -48,7 +47,19 @@ repo = 'elmcast/elm-vim'
 [[plugins]]
 repo = 'prettier/vim-prettier'
 build = 'npm install'
-on_ft = ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html']
+on_ft = [
+  'javascript',
+  'typescript',
+  'css',
+  'less',
+  'scss',
+  'json',
+  'graphql',
+  'markdown',
+  'vue',
+  'yaml',
+  'html',
+]
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
@@ -120,3 +131,6 @@ repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
 repo = 'morhetz/gruvbox'
+
+[[plugins]]
+repo = 'brooth/far.vim'
