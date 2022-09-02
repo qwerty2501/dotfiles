@@ -50,6 +50,15 @@ let g:previm_open_cmd='xdg-open'
 let g:cursorhold_updatetime = 100
 let g:executable_xvkbd=executable('xvkbd')
 let g:on_microsoft=system('uname -a | grep -i microsoft') != ""
+
+let g:far#enable_undo=2
+let g:far#source="rgnvim"
+set lazyredraw
+set regexpengine=1
+set ignorecase smartcase
+
+nnoremap  <C-g> :Far  **/*<Left><Left><Left><Left><Left>
+nnoremap <C-s> :F  **/*<Left><Left><Left><Left><Left>
 filetype plugin indent on
 syntax enable
 
