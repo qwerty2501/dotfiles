@@ -57,8 +57,6 @@ set lazyredraw
 set regexpengine=1
 set ignorecase smartcase
 
-nnoremap  <C-g> :Far  **/*<Left><Left><Left><Left><Left>
-nnoremap <C-s> :F  **/*<Left><Left><Left><Left><Left>
 let g:far#window_layout="tab"
 filetype plugin indent on
 syntax enable
