@@ -1,0 +1,5 @@
+require("setting")
+require("plugins")
+require("lsp")
+require("keymap")
+require("nvim-tree-setup")
