@@ -35,6 +35,8 @@ return require("packer").startup(function(use)
             "kyazdani42/nvim-web-devicons",
         },
     }
+    use "APZelos/blamer.nvim"
+    use "simrat39/rust-tools.nvim"
 
     if packer_bootstrap then
         require("packer").sync()

@@ -1,22 +1,26 @@
 require("mason").setup()
-lsp_config = require("mason-lspconfig")
-lsp_config.setup({
+require("mason-lspconfig").setup({
     ensure_installed = { "sumneko_lua", "rust_analyzer", "luaformatter" },
     automatic_installation = true,
 })
-lsp_config.setup_handlers({ function(server)
-    local opt = {
-        on_attach = function(client, bufnr)
-            local opts = { noremap = true, silent = true }
-            vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-            vim.cmd "autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)"
-        end,
-        capabilities = require("cmp_nvim_lsp").update_capabilities(
-            vim.lsp.protocol.make_client_capabilities()
-        )
-    }
-    require("lspconfig")[server].setup(opt)
-end })
+require("mason-lspconfig").setup_handlers({
+    function(server)
+        local opt = {
+            on_attach = function(client, bufnr)
+                local opts = { noremap = true, silent = true }
+                vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+                vim.cmd "autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)"
+            end,
+            capabilities = require("cmp_nvim_lsp").update_capabilities(
+                vim.lsp.protocol.make_client_capabilities()
+            )
+        }
+        require("lspconfig")[server].setup(opt)
+    end,
+    ["rust_analyzer"] = function()
+        require("rust-tools").setup {}
+    end
+})
 vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 vim.keymap.set("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
