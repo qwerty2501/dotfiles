@@ -19,7 +19,7 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.list = true
 vim.opt.listchars = "tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%"
-vim.opt.statusline = "%<%f %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%) %P"
+vim.opt.statusline = "%<%f\\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\\ %P"
 vim.opt.wrap = false
 vim.opt.nrformats = "bin,hex"
 vim.opt.swapfile = false
