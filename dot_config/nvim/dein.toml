@@ -62,9 +62,6 @@ on_ft = [
 ]
 
 [[plugins]]
-repo = 'Shougo/denite.nvim'
-
-[[plugins]]
 repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
