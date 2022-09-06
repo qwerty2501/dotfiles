@@ -17,3 +17,4 @@ libssl-dev
 pkg-config
 ccls
 cmake-format
+luarocks

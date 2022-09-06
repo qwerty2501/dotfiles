@@ -7,5 +7,6 @@ sudo apt install -y apt-transport-https \
 	curl \
 	wget \
 	git
+sudo add-apt-repository -y ppa:neovim-ppa/stable
 
 sudo apt update
