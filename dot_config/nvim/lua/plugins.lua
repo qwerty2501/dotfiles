@@ -37,6 +37,7 @@ return require("packer").startup(function(use)
     }
     use "APZelos/blamer.nvim"
     use "simrat39/rust-tools.nvim"
+    use "buoto/gotests-vim"
 
     if packer_bootstrap then
         require("packer").sync()

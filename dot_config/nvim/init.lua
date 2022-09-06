@@ -1,6 +1,6 @@
 require("setting")
+require("keymap")
 require("plugins")
 require("lsp")
-require("keymap")
 require("nvim-tree-setup")
 require("term")
