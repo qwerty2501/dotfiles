@@ -68,5 +68,4 @@ if g:on_microsoft
     augroup END
 endif
 
-colorscheme gruvbox
 hi NonText ctermfg=12 guifg=#2D3640
