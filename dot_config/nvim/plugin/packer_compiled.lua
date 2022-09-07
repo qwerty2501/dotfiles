@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/vim-test",
+    url = "https://github.com/vim-test/vim-test"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/vim-vsnip",
