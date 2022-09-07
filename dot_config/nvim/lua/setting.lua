@@ -25,3 +25,14 @@ vim.opt.nrformats = "bin,hex"
 vim.opt.swapfile = false
 vim.opt.formatoptions:remove("t")
 vim.opt.formatoptions:append("mM")
+
+
+vim.cmd [[
+ let s:on_microsoft=system('uname -a | grep -i microsoft') != "" 
+ if s:on_microsoft
+    augroup myYank
+        autocmd!
+        autocmd TextYankPost * :call system('clip.exe', @")
+    augroup END
+ endif
+]]
