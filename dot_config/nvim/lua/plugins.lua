@@ -18,15 +18,15 @@ vim.cmd([[
 
 return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
-  use "rstacruz/vim-closer"
   use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig"
   use "williamboman/mason.nvim"
   use "mfussenegger/nvim-dap"
   use "jose-elias-alvarez/null-ls.nvim"
-  use "hrsh7th/nvim-cmp"
+  use {
+    "hrsh7th/nvim-cmp",
+  }
   use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/vim-vsnip"
   use "tpope/vim-fugitive"
   use "ibhagwan/fzf-lua"
   use {
@@ -45,6 +45,12 @@ return require("packer").startup(function(use)
   use "tamago324/nlsp-settings.nvim"
   use "rcarriga/nvim-notify"
   use "folke/tokyonight.nvim"
+  use { 'saadparwaiz1/cmp_luasnip' }
+  use({
+    "L3MON4D3/LuaSnip",
+    tag = "v1.*",
+  })
+  use "rafamadriz/friendly-snippets"
 
   if packer_bootstrap then
     require("packer").sync()
