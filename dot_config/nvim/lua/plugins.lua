@@ -44,6 +44,7 @@ return require("packer").startup(function(use)
   }
   use "tamago324/nlsp-settings.nvim"
   use "rcarriga/nvim-notify"
+  use "folke/tokyonight.nvim"
 
   if packer_bootstrap then
     require("packer").sync()

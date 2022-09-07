@@ -26,6 +26,7 @@ vim.opt.swapfile = false
 vim.opt.formatoptions:remove("t")
 vim.opt.formatoptions:append("mM")
 
+vim.cmd [[colorscheme tokyonight]]
 
 vim.cmd [[
  let s:on_microsoft=system('uname -a | grep -i microsoft') != "" 
