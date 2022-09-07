@@ -42,6 +42,8 @@ return require("packer").startup(function(use)
     "akinsho/toggleterm.nvim",
     tag = "*"
   }
+  use "tamago324/nlsp-settings.nvim"
+  use "rcarriga/nvim-notify"
 
   if packer_bootstrap then
     require("packer").sync()

@@ -1,8 +1,17 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua", "rust_analyzer", "luaformatter" },
+  ensure_installed = { "sumneko_lua", "rust_analyzer", "luaformatter", "jsonls" },
   automatic_installation = true,
 })
+require("nlspsettings").setup({
+  config_home = vim.fn.stdpath("config") .. "/nlsp-settings",
+  local_settings_dir = ".nlsp-settings",
+  local_settings_root_markers_fallback = { ".git" },
+  append_default_schemas = true,
+  loader = "json",
+})
+local global_capabilities = vim.lsp.protocol.make_client_capabilities()
+global_capabilities.textDocument.completion.completionItem.snippetSupport = true
 require("mason-lspconfig").setup_handlers({
   function(server)
     local opt = {
@@ -15,7 +24,11 @@ require("mason-lspconfig").setup_handlers({
         vim.lsp.protocol.make_client_capabilities()
       )
     }
-    require("lspconfig")[server].setup(opt)
+    local lspconfig = require("lspconfig")
+    lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+      capabilities = global_capabilities,
+    })
+    lspconfig[server].setup(opt)
   end,
   ["rust_analyzer"] = function()
     require("rust-tools").setup {}
@@ -29,10 +42,25 @@ highlight LspReferenceRead  cterm=underline ctermfg=1 ctermbg=8 gui=underline gu
 highlight LspReferenceWrite cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
 augroup lsp_document_highlight
   autocmd!
-  autocmd CursorHold,CursorHoldI * lua vim.lsp.buf.document_highlight()
-  autocmd CursorMoved,CursorMovedI * lua vim.lsp.buf.clear_references()
+  autocmd CursorHold,CursorHoldI * lua DocumentHighlight()
+  autocmd CursorMoved,CursorMovedI * lua ClearReferences()
 augroup END
 ]]
+
+EnableDocumentHilight = true
+
+function DocumentHighlight()
+  if EnableDocumentHilight then
+    vim.lsp.buf.document_highlight()
+  end
+end
+
+EnableClearReferences = true
+function ClearReferences()
+  if EnableClearReferences then
+    vim.lsp.buf.clear_references()
+  end
+end
 
 local cmp = require("cmp")
 cmp.setup({
