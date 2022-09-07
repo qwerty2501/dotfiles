@@ -23,3 +23,11 @@ vim.keymap.set("n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
 
 
 vim.api.nvim_set_keymap("n", "<Leader>n", "<cmd>NvimTreeToggle<CR>", { noremap = true })
+
+
+vim.api.nvim_set_keymap("n", "<Leader>[", "<cmd>ToggleTerm<CR>", { noremap = true })
+vim.api.nvim_set_keymap("t", "<C-q>", [[<C-\><C-n>]], { noremap = true })
+vim.api.nvim_set_keymap("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { noremap = true })
+vim.api.nvim_set_keymap("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { noremap = true })
+vim.api.nvim_set_keymap("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { noremap = true })
+vim.api.nvim_set_keymap("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { noremap = true })
