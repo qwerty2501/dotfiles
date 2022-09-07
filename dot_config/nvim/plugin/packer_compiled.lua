@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["vim-closer"] = {
     loaded = true,
     path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/vim-closer",

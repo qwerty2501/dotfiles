@@ -38,6 +38,10 @@ return require("packer").startup(function(use)
   use "APZelos/blamer.nvim"
   use "simrat39/rust-tools.nvim"
   use "vim-test/vim-test"
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = "*"
+  }
 
   if packer_bootstrap then
     require("packer").sync()
