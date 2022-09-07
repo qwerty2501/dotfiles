@@ -23,9 +23,8 @@ return require("packer").startup(function(use)
   use "williamboman/mason.nvim"
   use "mfussenegger/nvim-dap"
   use "jose-elias-alvarez/null-ls.nvim"
-  use {
-    "hrsh7th/nvim-cmp",
-  }
+  use "hrsh7th/nvim-cmp"
+
   use "hrsh7th/cmp-nvim-lsp"
   use "tpope/vim-fugitive"
   use "ibhagwan/fzf-lua"
@@ -51,6 +50,7 @@ return require("packer").startup(function(use)
     tag = "v1.*",
   })
   use "rafamadriz/friendly-snippets"
+  use "brooth/far.vim"
 
   if packer_bootstrap then
     require("packer").sync()
