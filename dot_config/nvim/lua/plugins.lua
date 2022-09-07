@@ -37,16 +37,6 @@ return require("packer").startup(function(use)
   }
   use "APZelos/blamer.nvim"
   use "simrat39/rust-tools.nvim"
-  use {
-    "klen/nvim-test",
-    requires = {
-      "nvim-treesitter/nvim-treesitter",
-      run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
-    },
-    config = function()
-      require('nvim-test').setup()
-    end
-  }
 
   if packer_bootstrap then
     require("packer").sync()
