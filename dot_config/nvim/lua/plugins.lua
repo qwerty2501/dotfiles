@@ -52,6 +52,7 @@ return require("packer").startup(function(use)
   use "rafamadriz/friendly-snippets"
   use "brooth/far.vim"
   use "hashivim/vim-terraform"
+  use "simeji/winresizer"
 
   if packer_bootstrap then
     require("packer").sync()

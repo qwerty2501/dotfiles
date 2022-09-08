@@ -1,6 +1,13 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua", "rust_analyzer", "luaformatter", "jsonls" },
+  ensure_installed = {
+    "sumneko_lua",
+    "rust_analyzer",
+    "luaformatter",
+    "jsonls",
+    "bash-language-server",
+    "bash-debug-adapter"
+  },
   automatic_installation = true,
 })
 require("nlspsettings").setup({
