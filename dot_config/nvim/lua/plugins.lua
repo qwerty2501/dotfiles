@@ -51,6 +51,7 @@ return require("packer").startup(function(use)
   })
   use "rafamadriz/friendly-snippets"
   use "brooth/far.vim"
+  use "hashivim/vim-terraform"
 
   if packer_bootstrap then
     require("packer").sync()

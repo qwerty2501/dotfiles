@@ -184,6 +184,11 @@ _G.packer_plugins = {
     path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-terraform"] = {
+    loaded = true,
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/vim-terraform",
+    url = "https://github.com/hashivim/vim-terraform"
+  },
   ["vim-test"] = {
     loaded = true,
     path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/vim-test",
