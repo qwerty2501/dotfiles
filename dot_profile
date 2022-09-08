@@ -44,7 +44,7 @@ export WINEARCH=win32
 
 
 # BEGIN_DOCKER_CONFIG
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
+#export DOCKER_HOST=unix:///run/user/1000/docker.sock
 # END_DOCKER_CONFIG
 
 
