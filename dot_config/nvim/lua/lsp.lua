@@ -19,27 +19,33 @@ require("nlspsettings").setup({
 })
 local global_capabilities = vim.lsp.protocol.make_client_capabilities()
 global_capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+local function on_attach(_, bufnr)
+  local opts = { noremap = true, silent = true }
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  vim.cmd "autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)"
+end
+
+local server_opts = {
+  on_attach = on_attach,
+  capabilities = require("cmp_nvim_lsp").update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+  )
+}
+
 require("mason-lspconfig").setup_handlers({
   function(server)
-    local opt = {
-      on_attach = function(client, bufnr)
-        local opts = { noremap = true, silent = true }
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-        vim.cmd "autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)"
-      end,
-      capabilities = require("cmp_nvim_lsp").update_capabilities(
-        vim.lsp.protocol.make_client_capabilities()
-      )
-    }
     local lspconfig = require("lspconfig")
     lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
       capabilities = global_capabilities,
     })
-    lspconfig[server].setup(opt)
+    lspconfig[server].setup(server_opts)
   end,
   ["rust_analyzer"] = function()
-    require("rust-tools").setup {}
-  end
+    require("rust-tools").setup({
+      server = server_opts,
+    })
+  end,
 })
 
 vim.cmd [[
