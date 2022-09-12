@@ -1,0 +1,22 @@
+{
+  "test_table_snippets": {
+    "prefix": "tta",
+    "body": [
+      "type args struct{",
+      "}",
+      "type want struct{",
+      "}",
+      "tests := []struct{",
+      "  name string",
+      "  args args",
+      "  want want",
+      "}{",
+      "}",
+      "for _,tt := range tests{",
+      "  tt := tt",
+      "  t.Run(tt.name,func(t *testing.T){",
+      "  })",
+      "}"
+    ]
+  }
+}
