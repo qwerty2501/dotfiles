@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/qwerty2501/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/qwerty2501/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/qwerty2501/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/qwerty2501/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/qwerty2501/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/oikawa-k/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/oikawa-k/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/oikawa-k/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/oikawa-k/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/oikawa-k/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,127 +76,132 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["blamer.nvim"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/blamer.nvim",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/blamer.nvim",
     url = "https://github.com/APZelos/blamer.nvim"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   cmp_luasnip = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["far.vim"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/far.vim",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/far.vim",
     url = "https://github.com/brooth/far.vim"
   },
   ["friendly-snippets"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["fzf-lua"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/fzf-lua",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/fzf-lua",
     url = "https://github.com/ibhagwan/fzf-lua"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["nlsp-settings.nvim"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-notify"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["toggleterm.nvim"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-terraform"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/vim-terraform",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/vim-terraform",
     url = "https://github.com/hashivim/vim-terraform"
   },
   ["vim-test"] = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/vim-test",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/vim-test",
     url = "https://github.com/vim-test/vim-test"
   },
   winresizer = {
     loaded = true,
-    path = "/home/qwerty2501/.local/share/nvim/site/pack/packer/start/winresizer",
+    path = "/home/oikawa-k/.local/share/nvim/site/pack/packer/start/winresizer",
     url = "https://github.com/simeji/winresizer"
   }
 }

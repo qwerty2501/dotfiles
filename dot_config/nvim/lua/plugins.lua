@@ -53,6 +53,7 @@ return require("packer").startup(function(use)
   use "brooth/far.vim"
   use "hashivim/vim-terraform"
   use "simeji/winresizer"
+  use "airblade/vim-gitgutter"
 
   if packer_bootstrap then
     require("packer").sync()
