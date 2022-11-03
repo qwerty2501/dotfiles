@@ -3,10 +3,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "sumneko_lua",
     "rust_analyzer",
-    "luaformatter",
     "jsonls",
-    "bash-language-server",
-    "bash-debug-adapter"
   },
   automatic_installation = true,
 })
@@ -43,7 +40,7 @@ end
 
 local server_opts = {
   on_attach = on_attach,
-  capabilities = require("cmp_nvim_lsp").update_capabilities(
+  capabilities = require("cmp_nvim_lsp").default_capabilities(
     vim.lsp.protocol.make_client_capabilities()
   )
 }
