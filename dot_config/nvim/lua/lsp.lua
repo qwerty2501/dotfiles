@@ -4,6 +4,8 @@ require("mason-lspconfig").setup({
     "sumneko_lua",
     "rust_analyzer",
     "jsonls",
+    "tsserver",
+    "html",
   },
   automatic_installation = true,
 })
