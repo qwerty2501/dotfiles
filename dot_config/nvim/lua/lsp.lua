@@ -6,6 +6,9 @@ require("mason-lspconfig").setup({
     "jsonls",
     "tsserver",
     "html",
+    "cssls",
+    "cssmodules_ls",
+    "tailwindcss",
   },
   automatic_installation = true,
 })
