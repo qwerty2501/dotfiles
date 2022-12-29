@@ -25,7 +25,7 @@ rustc_version = "1.42.0"
 # source code template
 template = """
 #[allow(unused_imports)]
-use proconio::{fastout, input, marker::*, source::auto::AutoSource};
+use proconio::{input, marker::*, source::auto::AutoSource};
 #[allow(unused_imports)]
 use std::cmp::*;
 #[allow(unused_imports)]
