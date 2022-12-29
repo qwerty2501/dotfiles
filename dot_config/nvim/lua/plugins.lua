@@ -56,7 +56,7 @@ return require("packer").startup(function(use)
   use "airblade/vim-gitgutter"
   use {
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    requires = "nvim-tree/nvim-web-devicons",
   }
 
   if packer_bootstrap then
