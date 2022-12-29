@@ -29,9 +29,9 @@ return require("packer").startup(function(use)
   use "tpope/vim-fugitive"
   use "ibhagwan/fzf-lua"
   use {
-    "kyazdani42/nvim-tree.lua",
+    "nvim-tree/nvim-tree.lua",
     requires = {
-      "kyazdani42/nvim-web-devicons",
+      "nvim-tree/nvim-web-devicons",
     },
   }
   use "APZelos/blamer.nvim"
@@ -54,6 +54,10 @@ return require("packer").startup(function(use)
   use "hashivim/vim-terraform"
   use "simeji/winresizer"
   use "airblade/vim-gitgutter"
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
 
   if packer_bootstrap then
     require("packer").sync()

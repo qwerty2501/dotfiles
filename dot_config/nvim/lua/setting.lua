@@ -25,7 +25,9 @@ vim.opt.nrformats = "bin,hex"
 vim.opt.swapfile = false
 vim.opt.formatoptions:remove("t")
 vim.opt.formatoptions:append("mM")
-
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
 vim.cmd [[colorscheme tokyonight]]
 
 vim.cmd [[
