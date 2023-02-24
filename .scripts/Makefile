@@ -34,6 +34,11 @@ install/cargo_tools: install/rustup_components
 install/oh-my-bash: install/base_apt
 	$(CURDIR)/scripts/install/oh-my-bash.sh
 
+.PHONY: install/nerd_fonts
+install/nerd_fonts:
+	$(CURDIR)/scripts/install/nerd_fonts.sh
+
+
 
 
 .PHONY: environment/env
@@ -41,6 +46,6 @@ environment/env: install/apt
 	$(CURDIR)/scripts/environment/env.sh
 
 .PHONY: install
-install: install/docker install/cargo_tools install/node_tools install/apt install/rustup_components install/cargo_tools install/oh-my-bash
+install: install/docker install/cargo_tools install/node_tools install/apt install/rustup_components install/cargo_tools install/oh-my-bash install/nerd_fonts
 .PHONY: bootstrap
 bootstrap: install environment/env
