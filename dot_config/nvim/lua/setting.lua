@@ -31,11 +31,16 @@ vim.opt.termguicolors = true
 vim.cmd [[colorscheme tokyonight]]
 
 vim.cmd [[
- let s:on_microsoft=system('uname -a | grep -i microsoft') != "" 
- if s:on_microsoft
-    augroup myYank
-        autocmd!
-        autocmd TextYankPost * :call system('clip.exe', @")
-    augroup END
- endif
+  let g:clipboard = {
+    \   'name': 'myClipboard',
+    \   'copy': {
+    \      '+': 'win32yank.exe -i',
+    \      '*': 'win32yank.exe -i',
+    \    },
+    \   'paste': {
+    \      '+': 'win32yank.exe -o',
+    \      '*': 'win32yank.exe -o',
+    \   },
+    \   'cache_enabled': 1,
+    \ }
 ]]
