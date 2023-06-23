@@ -38,7 +38,7 @@ end
 local function on_attach(_, bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  vim.cmd "autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)"
+  vim.cmd "autocmd BufWritePre * lua vim.lsp.buf.format(nil)"
   vim.cmd "autocmd BufWritePre *.go lua go_org_imports()"
 end
 
