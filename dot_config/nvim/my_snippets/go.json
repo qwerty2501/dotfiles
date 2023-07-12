@@ -19,6 +19,62 @@
       "}"
     ]
   },
+  "test_function": {
+    "prefix": "tf",
+    "body": [
+      "func Test$1(t *testing.T){",
+      "t.Parallel()",
+      "type args struct{",
+      "}",
+      "type want struct{",
+      "   result $2",
+      "}",
+      "tests := []struct{",
+      "  name string",
+      "  args args",
+      "  want want",
+      "}{",
+      "}",
+      "for _,tt := range tests{",
+      "  tt := tt",
+      "  t.Run(tt.name,func(t *testing.T){",
+      "     t.Parallel()",
+      "     got := $1()",
+      "     assertx.Equal(t,tt.want.result,got)",
+      "  })",
+      "}",
+      "}"
+    ]
+  },
+  "test_function_with_error": {
+    "prefix": "tfe",
+    "body": [
+      "func Test$1(t *testing.T){",
+      "t.Parallel()",
+      "type args struct{",
+      "}",
+      "type want struct{",
+      "   result $2",
+      "   err error",
+      "}",
+      "tests := []struct{",
+      "  name string",
+      "  args args",
+      "  want want",
+      "}{",
+      "}",
+      "for _,tt := range tests{",
+      "  tt := tt",
+      "  t.Run(tt.name,func(t *testing.T){",
+      "     t.Parallel()",
+      "     got,err := $1()",
+      "     asserterr.Equal(t,tt.want.err,err)",
+      "     assertx.Equal(t,tt.want.result,got)",
+      "  })",
+      "}",
+      "}"
+    ]
+  },
   "test_function_presenter": {
     "prefix": "tfp",
     "body": [
