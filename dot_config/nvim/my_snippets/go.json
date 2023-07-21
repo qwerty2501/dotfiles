@@ -75,6 +75,37 @@
       "}"
     ]
   },
+  "test_function_with_error": {
+    "prefix": "tse",
+    "body": [
+      "func Test$1_$2(t *testing.T){",
+      "t.Parallel()",
+      "type args struct{",
+      "}",
+      "type want struct{",
+      "   result $3",
+      "   err error",
+      "}",
+      "tests := []struct{",
+      "  name string",
+      "  args args",
+      "  want want",
+      "}{",
+      "}",
+      "for _,tt := range tests{",
+      "  tt := tt",
+      "  t.Run(tt.name,func(t *testing.T){",
+      "     t.Parallel()",
+      "     testutil.RunInDomainTest(t, testutil.DefaultEnvironmentConfig(), func(service $4.$1) {",
+      "       got,err := service.$2()",
+      "       asserterr.Equal(t,tt.want.err,err)",
+      "       assertx.Equal(t,tt.want.result,got)",
+      "     })",
+      "  })",
+      "}",
+      "}"
+    ]
+  },
   "test_function_presenter": {
     "prefix": "tfp",
     "body": [
