@@ -75,7 +75,7 @@
       "}"
     ]
   },
-  "test_function_with_error": {
+  "test_service_with_error": {
     "prefix": "tse",
     "body": [
       "func Test$1_$2(t *testing.T){",
