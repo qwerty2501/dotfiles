@@ -30,6 +30,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 vim.cmd [[colorscheme tokyonight]]
 
+if OS == 'Linux' and uname.release:lower() then
 vim.cmd [[
   let g:clipboard = {
     \   'name': 'myClipboard',
@@ -44,3 +45,5 @@ vim.cmd [[
     \   'cache_enabled': 1,
     \ }
 ]]
+end
+
