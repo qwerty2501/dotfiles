@@ -53,7 +53,10 @@ return require("packer").startup(function(use)
   use "brooth/far.vim"
   use "hashivim/vim-terraform"
   use "simeji/winresizer"
-  use "airblade/vim-gitgutter"
+  use {
+    "airblade/vim-gitgutter",
+    branch = "main"
+  }
   use {
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
