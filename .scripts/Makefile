@@ -38,6 +38,11 @@ install/oh-my-bash: install/base_apt
 install/nerd_fonts:
 	$(CURDIR)/scripts/install/nerd_fonts.sh
 
+.PHONY: install/neovim
+install/neovim:
+	$(CURDIR)/scripts/install/neovim.sh
+
+
 
 
 
@@ -46,6 +51,6 @@ environment/env: install/apt
 	$(CURDIR)/scripts/environment/env.sh
 
 .PHONY: install
-install: install/docker install/cargo_tools install/node_tools install/apt install/rustup_components install/cargo_tools install/oh-my-bash install/nerd_fonts
+install: install/docker install/cargo_tools install/node_tools install/apt install/rustup_components install/cargo_tools install/oh-my-bash install/neovim install/nerd_fonts
 .PHONY: bootstrap
 bootstrap: install environment/env
