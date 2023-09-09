@@ -1,17 +1,12 @@
 uidmap
 tar
 neovim
-pwgen
 direnv
-chromium-browser
-python3-pip
 tree
-ffmpeg
 fzf
 jq
 xvkbd
 keepassxc
-mysql-client
 libxcb-composite0-dev
 libssl-dev
 pkg-config
