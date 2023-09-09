@@ -27,4 +27,4 @@ neovim_url="${base_url}/releases/download/${latest_neovim_version}/${file}.tar.g
 tmp_dir=$(mktemp -d)
 curl -sSL "$neovim_url" | tar xz --directory "${tmp_dir}"
 
-sudo mv "${tmp_dir}/${file}/*" "/usr/local/"
+sudo mv ${tmp_dir}/${file}/* /usr/local/
