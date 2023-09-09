@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -eu
 
 sudo apt install -y apt-transport-https \
 	ca-certificates \
@@ -7,6 +8,5 @@ sudo apt install -y apt-transport-https \
 	curl \
 	wget \
 	git
-sudo add-apt-repository -y ppa:neovim-ppa/stable
 
 sudo apt update
