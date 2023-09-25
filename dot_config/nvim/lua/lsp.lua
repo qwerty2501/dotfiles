@@ -35,12 +35,40 @@ function go_org_imports(wait_ms)
   end
 end
 
-local function on_attach(_, bufnr)
+local function exec_format()
+  if vim.bo.filetype == 'go' then
+    go_org_imports()
+  else
+    vim.lsp.buf.format(nil)
+  end
+end
+
+local function on_attach(args, bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  vim.cmd "autocmd BufWritePre * lua vim.lsp.buf.format(nil)"
-  vim.cmd "autocmd BufWritePre *.go lua go_org_imports()"
+
+  local format = args.format or {}
+  local client = args.client
+  if client == nil then
+    return
+  end
+  if not client.server_capabilities.documentFormattingProvider then
+    return
+  end
+  local enabled = true
+  if format.enable ~= nil then
+    enabled = format.enable
+  end
+  client.server_capabilities.documentFormattingProvider = enabled
+  if enabled then
+    vim.api.nvim_create_augroup('lsp_auto_format', {})
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      group = 'lsp_auto_format',
+      callback = exec_format
+    })
+  end
 end
+
 
 local server_opts = {
   on_attach = on_attach,
@@ -65,15 +93,9 @@ require("mason-lspconfig").setup_handlers({
 })
 
 vim.cmd [[
-set updatetime=500
 highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
 highlight LspReferenceRead  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
 highlight LspReferenceWrite cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
-augroup lsp_document_highlight
-  autocmd!
-  autocmd CursorHold,CursorHoldI * lua DocumentHighlight()
-  autocmd CursorMoved,CursorMovedI * lua ClearReferences()
-augroup END
 ]]
 
 EnableDocumentHilight = true
@@ -90,6 +112,16 @@ function ClearReferences()
     vim.lsp.buf.clear_references()
   end
 end
+
+vim.api.nvim_create_augroup('lsp_document_highlight', {})
+vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+  group = 'lsp_document_highlight',
+  callback = DocumentHighlight
+})
+vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+  group = 'lsp_document_highlight',
+  callback = ClearReferences
+})
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
