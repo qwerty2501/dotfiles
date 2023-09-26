@@ -38,35 +38,19 @@ end
 local function exec_format()
   if vim.bo.filetype == 'go' then
     go_org_imports()
-  else
-    vim.lsp.buf.format(nil)
   end
+  vim.lsp.buf.format(nil)
 end
 
-local function on_attach(args, bufnr)
+local function on_attach(_, bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 
-  local format = args.format or {}
-  local client = args.client
-  if client == nil then
-    return
-  end
-  if not client.server_capabilities.documentFormattingProvider then
-    return
-  end
-  local enabled = true
-  if format.enable ~= nil then
-    enabled = format.enable
-  end
-  client.server_capabilities.documentFormattingProvider = enabled
-  if enabled then
-    vim.api.nvim_create_augroup('lsp_auto_format', {})
-    vim.api.nvim_create_autocmd('BufWritePre', {
-      group = 'lsp_auto_format',
-      callback = exec_format
-    })
-  end
+  vim.api.nvim_create_augroup('lsp_auto_format', {})
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    group = 'lsp_auto_format',
+    callback = exec_format
+  })
 end
 
 
