@@ -8,6 +8,7 @@ require("mason-lspconfig").setup({
     "cssls",
     "cssmodules_ls",
     "tailwindcss",
+    "taplo",
   },
   automatic_installation = true,
 })
