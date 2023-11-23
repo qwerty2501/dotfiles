@@ -39,3 +39,5 @@ vim.api.nvim_set_keymap("n", "<Leader>xw", "<cmd>TroubleToggle workspace_diagnos
 vim.api.nvim_set_keymap("n", "<Leader>xd", "<cmd>TroubleToggle document_diagnostics<CR>", default_opts)
 vim.api.nvim_set_keymap("n", "<Leader>xq", "<cmd>TroubleToggle quickfix<CR>", default_opts)
 vim.api.nvim_set_keymap("n", "<Leader>xl", "<cmd>TroubleToggle loclist<CR>", default_opts)
+vim.api.nvim_set_keymap("n", "<Leader>xn", "<cmd>Trouble<CR><cmd>lua require(\"trouble\").next({skip_groups = true, jump = true})<CR>", default_opts)
+vim.api.nvim_set_keymap("n", "<Leader>xp", "<cmd>Trouble<CR><cmd>lua require(\"trouble\").previous({skip_groups = true, jump = true})<CR>", default_opts)
