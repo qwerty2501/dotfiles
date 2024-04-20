@@ -47,3 +47,33 @@ vim.cmd [[
 ]]
 end
 
+
+
+vim.api.nvim_create_augroup('imegroup', { clear = true })
+
+function ime_leave()
+  if vim.fn.has('linux') then
+    if vim.fn.system('type ibus') ~= '' then
+      vim.fn.system('ibus engine xkb:us::eng')
+    end
+  end
+end
+
+function ime_enter()
+  if vim.fn.has('linux') then
+    if vim.fn.system('type ibus') ~= '' then
+      vim.fn.system('ibus engine mozc-jp')
+    end
+  end
+end
+vim.api.nvim_create_autocmd({'InsertLeave'},{
+  pattern = '*',
+  group='imegroup',
+  callback=ime_leave,
+})
+
+vim.api.nvim_create_autocmd({'InsertEnter'},{
+  pattern = '*',
+  group='imegroup',
+  callback=ime_enter,
+})
