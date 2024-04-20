@@ -6,4 +6,3 @@ require("lsp")
 require("nvim-tree-setup")
 require("term")
 
-

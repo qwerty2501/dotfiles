@@ -6,6 +6,7 @@ vim.api.nvim_set_keymap("n", "<Leader>T", "<cmd>TestFile<CR>", default_opts)
 vim.api.nvim_set_keymap("n", "<Leader>a", "<cmd>TestSuite<CR>", default_opts)
 vim.api.nvim_set_keymap("n", "<Leader>l", "<cmd>TestLast<CR>", default_opts)
 vim.api.nvim_set_keymap("n", "<Leader>g", "<cmd>TestVisit<CR>", default_opts)
+vim.api.nvim_set_keymap("n","<Leader>ibus","<cmd>lua vim.fn.system('ibus engine mozc-jp')<CR>",default_opts)
 
 
 
