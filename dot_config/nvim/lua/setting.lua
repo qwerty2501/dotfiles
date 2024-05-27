@@ -85,7 +85,7 @@ vim.api.nvim_create_autocmd({'VimEnter', 'WinEnter'}, {
     group = 'extra-whitespace',
     pattern = {'*'},
     command = [[
-    call matchadd('ExtraWhitespace', '[\u200B\u3000]')
+    call matchadd('ExtraWhitespace', '[\u00A0\u2000-\u200B\u3000]')
     highlight default ExtraWhitespace ctermbg=darkmagenta guibg=darkmagenta
     ]]
 })
