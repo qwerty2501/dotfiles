@@ -77,3 +77,15 @@ vim.api.nvim_create_autocmd({'InsertEnter'},{
   group='imegroup',
   callback=ime_enter,
 })
+
+
+
+vim.api.nvim_create_augroup('extra-whitespace', {})
+vim.api.nvim_create_autocmd({'VimEnter', 'WinEnter'}, {
+    group = 'extra-whitespace',
+    pattern = {'*'},
+    command = [[
+    call matchadd('ExtraWhitespace', '[\u200B\u3000]')
+    highlight default ExtraWhitespace ctermbg=darkmagenta guibg=darkmagenta
+    ]]
+})
