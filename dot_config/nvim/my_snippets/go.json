@@ -107,48 +107,5 @@
       "}",
       "}"
     ]
-  },
-  "test_function_presenter": {
-    "prefix": "tfp",
-    "body": [
-      "func Test$1_$2(t *testing.T){",
-      "t.Parallel()",
-      "type args struct{",
-      "req     *ogenapi.$3",
-      "}",
-      "type want struct{",
-      "err error",
-      "res *ogenapi.$4",
-      "}",
-      "tests := []struct{",
-      "  name string",
-      "  args args",
-      "  want want",
-      "}{",
-      "  {",
-      "    name:\"\",",
-      "    args:args{",
-      "    },",
-      "    want:want{",
-      "      err:nil,",
-      "      res:nil,",
-      "    },",
-      "  },",
-      "}",
-      "for _,tt := range tests{",
-      "  tt := tt",
-      "  t.Run(tt.name,func(t *testing.T){",
-      "  t.Parallel()",
-      "  testrun.InvokeRest(t, func(rc *testrun.RunContext) {",
-      "  ctx := context.Background()",
-      "  testrun.MustLoadTestFixture(rc.DB, testfixtures.Paths(filepath.Join(\"testdata\", tt.name)))",
-      "  res, err := rc.Client.$2(ctx,tt.args.req)",
-      "  assertx.Equal(t,tt.want.err,err)",
-      "  assertx.Equal(t,tt.want.res,res)",
-      "  })",
-      "  })",
-      "}",
-      "}"
-    ]
   }
 }
