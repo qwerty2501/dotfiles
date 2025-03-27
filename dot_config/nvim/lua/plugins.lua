@@ -1,78 +1,70 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
-local packer_bootstrap = ensure_packer()
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+vim.opt.rtp:prepend(lazypath)
 
-return require("packer").startup(function(use)
-  use "wbthomason/packer.nvim"
-  use "williamboman/mason-lspconfig.nvim"
-  use "neovim/nvim-lspconfig"
-  use "williamboman/mason.nvim"
-  use "mfussenegger/nvim-dap"
-  use "jose-elias-alvarez/null-ls.nvim"
-  use "hrsh7th/nvim-cmp"
-
-  use "hrsh7th/cmp-nvim-lsp"
-  use "tpope/vim-fugitive"
-  use "ibhagwan/fzf-lua"
-  use {
-    "nvim-tree/nvim-tree.lua",
-    requires = {
-      "nvim-tree/nvim-web-devicons",
+require("lazy").setup({
+  spec = {
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    "williamboman/mason.nvim",
+    "mfussenegger/nvim-dap",
+    "jose-elias-alvarez/null-ls.nvim",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
+    "tpope/vim-fugitive",
+    "ibhagwan/fzf-lua",
+    {
+      "nvim-tree/nvim-tree.lua",
+      opts={},
+      dependencies = {
+        "nvim-tree/nvim-web-devicons",
+      },
     },
-  }
-  use "APZelos/blamer.nvim"
-  use "simrat39/rust-tools.nvim"
-  use "vim-test/vim-test"
-  use {
-    "akinsho/toggleterm.nvim",
-    tag = "*"
-  }
-  use "tamago324/nlsp-settings.nvim"
-  use "rcarriga/nvim-notify"
-  use "folke/tokyonight.nvim"
-  use { 'saadparwaiz1/cmp_luasnip' }
-  use({
-    "L3MON4D3/LuaSnip",
-    tag = "v1.*",
-  })
-  use "rafamadriz/friendly-snippets"
-  use "brooth/far.vim"
-  use "hashivim/vim-terraform"
-  use "simeji/winresizer"
-  use {
-    "airblade/vim-gitgutter",
-    branch = "main"
-  }
-  use {
-    "folke/trouble.nvim",
-    opts = {
-      warn_no_results = false,
+    "APZelos/blamer.nvim",
+    "simrat39/rust-tools.nvim",
+    "vim-test/vim-test",
+    {"akinsho/toggleterm.nvim", version = "*", config = true},
+    "tamago324/nlsp-settings.nvim",
+    "rcarriga/nvim-notify",
+    "folke/tokyonight.nvim",
+    "saadparwaiz1/cmp_luasnip",
+    {
+      "L3MON4D3/LuaSnip",
+      version = "v2.*",
     },
-    requires = {
-      "nvim-tree/nvim-web-devicons",
-      "folke/todo-comments.nvim",
+    "rafamadriz/friendly-snippets",
+    "brooth/far.vim",
+    "hashivim/vim-terraform",
+    "simeji/winresizer",
+    {
+      "airblade/vim-gitgutter",
+      branch = "main"
     },
-  }
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
-
-  if packer_bootstrap then
-    require("packer").sync()
-  end
-end)
+    {
+      "folke/trouble.nvim",
+      opts = {
+        warn_no_results = false,
+      },
+      command="Trouble",
+      dependencies = {
+        "nvim-tree/nvim-web-devicons",
+        "folke/todo-comments.nvim",
+      },
+    },
+    {
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+    },
+  },
+  install = { colorscheme = { "habamax" } },
+  checker = { enabled = true },
+})
