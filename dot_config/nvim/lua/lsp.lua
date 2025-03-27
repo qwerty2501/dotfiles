@@ -1,4 +1,5 @@
 require("mason").setup()
+require("trouble").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "rust_analyzer",

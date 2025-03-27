@@ -12,7 +12,7 @@ vim.api.nvim_set_keymap("n","<Leader>ibus","<cmd>lua vim.fn.system('ibus engine 
 
 vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 vim.keymap.set("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-vim.keymap.set("n", "gr", "<cmd>TroubleToggle lsp_references<CR>")
+vim.keymap.set("n", "gr", "<cmd>Trouble diagnostics toggle lsp_references<CR>")
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
 vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")

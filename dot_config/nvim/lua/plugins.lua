@@ -59,7 +59,13 @@ return require("packer").startup(function(use)
   }
   use {
     "folke/trouble.nvim",
-    requires = "nvim-tree/nvim-web-devicons",
+    opts = {
+      warn_no_results = false,
+    },
+    requires = {
+      "nvim-tree/nvim-web-devicons",
+      "folke/todo-comments.nvim",
+    },
   }
   use({
     "iamcco/markdown-preview.nvim",
