@@ -1,6 +1,7 @@
 require("mason").setup()
 require("trouble").setup()
-require("mason-lspconfig").setup({
+local mason_lspconfig = require("mason-lspconfig")
+mason_lspconfig.setup({
   ensure_installed = {
     "rust_analyzer",
     "jsonls",
@@ -11,7 +12,7 @@ require("mason-lspconfig").setup({
     "tailwindcss",
     "taplo",
   },
-  automatic_installation = true,
+  automatic_enable = true,
 })
 require("nlspsettings").setup({
   config_home = vim.fn.stdpath("config") .. "/nlsp-settings",
@@ -63,20 +64,14 @@ local server_opts = {
   )
 }
 
-require("mason-lspconfig").setup_handlers({
-  function(server)
-    local lspconfig = require("lspconfig")
-    lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
-      capabilities = global_capabilities,
-    })
-    lspconfig[server].setup(server_opts)
-  end,
-  ["rust_analyzer"] = function()
+vim.lsp.config("*",server_opts)
+vim.lsp.config.rust_analyzer = {
+  on_init = function(_,_)
     require("rust-tools").setup({
       server = server_opts,
     })
   end,
-})
+}
 
 vim.cmd [[
 highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
