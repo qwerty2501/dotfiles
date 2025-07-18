@@ -8,9 +8,9 @@ latest_version(){
 }
 target_file(){
   if [ "$(uname)" == "Darwin" ]; then
-    echo "nvim-macos"
+    echo "nvim-macos-x86_64"
   elif [[ "$(uname)" =~ "Linux" ]]; then
-    echo "nvim-linux64"
+    echo "nvim-linux-x86_64"
   else
     echo "$(uname) is not supported" >&2
     exit 1
