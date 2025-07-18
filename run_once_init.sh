@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-
-$($HOME/bin/chezmoi source-path)/.scripts/init.sh
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
+$SCRIPT_DIR/.scripts/init.sh
 exit 0
