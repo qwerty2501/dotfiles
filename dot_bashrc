@@ -52,6 +52,3 @@ if [ -f "$HOME/.local_bashrc" ] ; then
 		source $HOME/.local_bashrc
 fi
 
-if [ -f "$HOME/.cargo/env" ] ; then
-  source $HOME/.cargo/env
-fi
