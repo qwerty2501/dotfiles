@@ -39,15 +39,10 @@ export XDG_VIDEOS_DIR=$HOME/Videos
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export GO111MODULE=on
 # Ubuntu make installation of Ubuntu Make binary symlink
-PATH=${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$HOME/.cargo/bin:$HOME/bin:$HOME/.anyenv/bin:$HOME/.local/share/umake/bin:/usr/local/go/bin:/usr/local/gradle/bin:$HOME/.pyenv/bin:/usr/local/gatling/bin:$PATH
+PATH=$HOME/.cargo/bin:$HOME/bin:$HOME/.anyenv/bin:$HOME/.local/share/umake/bin:/usr/local/go/bin:/usr/local/gradle/bin:$HOME/.pyenv/bin:/usr/local/gatling/bin:$PATH
 export WINEARCH=win32
 
-
-# BEGIN_DOCKER_CONFIG
-#export DOCKER_HOST=unix:///run/user/1000/docker.sock
-# END_DOCKER_CONFIG
-
-
+type asdf && export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 if [ -f "$HOME/.local_profile" ] ; then
 		source $HOME/.local_profile
@@ -57,4 +52,4 @@ if [ -f "$HOME/.cargo/env" ] ; then
   source $HOME/.cargo/env
 fi
 
-. "$HOME/.cargo/env"
+
