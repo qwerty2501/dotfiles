@@ -10,5 +10,3 @@ sudo timedatectl set-timezone Asia/Tokyo
 
 LANG=C xdg-user-dirs-gtk-update
 
-gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
-

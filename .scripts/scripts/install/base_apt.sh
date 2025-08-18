@@ -9,4 +9,5 @@ sudo apt install -y apt-transport-https \
 	wget \
 	git
 
+sudo install -m 0755 -d /etc/apt/keyrings
 sudo apt update

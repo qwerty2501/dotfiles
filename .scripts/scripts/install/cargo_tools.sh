@@ -2,4 +2,4 @@
 set -eu
 
 
-$HOME/.cargo/bin/cargo install $(cat $(dirname $0)/../../configs/install/cargo_tools)
+#$HOME/.cargo/bin/cargo install $(cat $(dirname $0)/../../configs/install/cargo_tools)
