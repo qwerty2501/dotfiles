@@ -27,14 +27,8 @@ plugins=(
 source $OSH/oh-my-bash.sh
 eval "$(direnv hook bash)"
 
-if [ -f "$HOME/.Xmodmap" ]; then xmodmap $HOME/.Xmodmap; fi
 if [ -f "$HOME/.bash_aliases" ]; then
     . "$HOME/.bash_aliases"
-fi
-# BEGIN ANSIBLE MANAGED BLOCK: asdf
-if [ -f "$HOME/.asdf/asdf.sh" ]; then
-  source $HOME/.asdf/asdf.sh
-  source $HOME/.asdf/completions/asdf.bash
 fi
 # END ANSIBLE MANAGED BLOCK: asdf
 
