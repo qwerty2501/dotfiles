@@ -15,41 +15,4 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-
-export EDITOR=nvim
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_DESKTOP_DIR=$HOME/Desktop
-export XDG_DOWNLOAD_DIR=$HOME/Downloads
-export XDG_DOCUMENTS_DIR=$HOME/Documents
-export XDG_MUSIC_DIR=$HOME/Music
-export XDG_PICTURES_DIR=$HOME/Pictures
-export XDG_VIDEOS_DIR=$HOME/Videos
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-export GO111MODULE=on
-# Ubuntu make installation of Ubuntu Make binary symlink
-PATH=$HOME/.cargo/bin:$HOME/bin:$HOME/.anyenv/bin:$HOME/.local/share/umake/bin:/usr/local/go/bin:/usr/local/gradle/bin:$HOME/.pyenv/bin:/usr/local/gatling/bin:$PATH
-export WINEARCH=win32
-
-type asdf && export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
-if [ -f "$HOME/.local_profile" ] ; then
-		source $HOME/.local_profile
-fi
-
-if [ -f "$HOME/.cargo/env" ] ; then
-  source $HOME/.cargo/env
-fi
-
-
+source "$HOME/.posix_env_vars"
