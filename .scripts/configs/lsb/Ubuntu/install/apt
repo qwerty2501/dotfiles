@@ -12,3 +12,5 @@ pkg-config
 ccls
 cmake-format
 luarocks
+nodejs
+npm
