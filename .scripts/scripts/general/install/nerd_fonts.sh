@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -eu
 
+mkdir -p /usr/local/share/fonts/
 cd /usr/local/share/fonts/
 
 sudo curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Hack/Bold/HackNerdFont-Bold.ttf &
