@@ -13,8 +13,8 @@ install/rustup_components: install/rust
 install/oh-my-bash:
 	$(CURDIR)/install/oh-my-bash.sh
 
-.PHONY: install/nerd_fonts
-install/nerd_fonts:
+.PHONY: install/fonts
+install/fonts:
 	$(CURDIR)/install/nerd_fonts.sh
 
 .PHONY: install/neovim
@@ -27,6 +27,6 @@ install/neovim:
 
 
 .PHONY: install
-install: install/rustup_components install/oh-my-bash install/neovim install/nerd_fonts
+install: install/rustup_components install/oh-my-bash install/neovim install/fonts
 .PHONY: bootstrap
 bootstrap: install
