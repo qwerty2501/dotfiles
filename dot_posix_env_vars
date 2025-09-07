@@ -20,8 +20,8 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 type asdf && export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-if [ -f "$HOME/.local_profile" ] ; then
-		source $HOME/.local_profile
+if [ -f "$HOME/.local_posix_env_vars" ] ; then
+		source $HOME/.local_posix_env_vars
 fi
 
 if [ -f "$HOME/.cargo/env" ] ; then
