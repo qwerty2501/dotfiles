@@ -2,7 +2,7 @@
 set -eu
 
 
-case "$(uname -a)" in
+case "$(lsb_release -a)" in
   *Ubuntu* ) export TARGET_PLATFORM="Ubuntu" ;;
   *cachyos* ) export TARGET_PLATFORM="cachyos" ;;
 esac
