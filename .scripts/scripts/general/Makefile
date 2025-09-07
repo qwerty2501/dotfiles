@@ -15,7 +15,7 @@ install/oh-my-bash:
 
 .PHONY: install/fonts
 install/fonts:
-	$(CURDIR)/install/nerd_fonts.sh
+	$(CURDIR)/install/fonts.sh
 
 .PHONY: install/neovim
 install/neovim:
