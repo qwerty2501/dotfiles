@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sudo packman -Syu
+sudo pacman -Syu
