@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#sudo apt update
+sudo apt update
 sudo apt install -y apt-transport-https \
 	ca-certificates \
 	gnupg-agent \
@@ -12,4 +12,4 @@ sudo apt install -y apt-transport-https \
 
 sudo install -m 0755 -d /etc/apt/keyrings
 
-#sudo apt update
+sudo apt update
