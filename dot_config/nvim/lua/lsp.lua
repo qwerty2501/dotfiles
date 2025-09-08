@@ -5,7 +5,7 @@ mason_lspconfig.setup({
   ensure_installed = {
     "rust_analyzer",
     "jsonls",
-    "tsserver",
+    "ts_ls",
     "html",
     "cssls",
     "cssmodules_ls",
