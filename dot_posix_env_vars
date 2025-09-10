@@ -18,12 +18,17 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
-type asdf && export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 if [ -f "$HOME/.local_posix_env_vars" ] ; then
-		source $HOME/.local_posix_env_vars
+		. $HOME/.local_posix_env_vars
 fi
 
 if [ -f "$HOME/.cargo/env" ] ; then
-  source $HOME/.cargo/env
+  . $HOME/.cargo/env
 fi
+
+if [ -f "$HOME/bin" ] ; then
+  export PATH="$HOME/bin:$PATH"
+fi
+
+type -a asdf > /dev/null && export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
