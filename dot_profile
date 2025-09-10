@@ -15,4 +15,4 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-source "$HOME/.posix_env_vars"
+. "$HOME/.posix_env_vars"
