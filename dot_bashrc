@@ -33,6 +33,7 @@ fi
 # END ANSIBLE MANAGED BLOCK: asdf
 
 
+type -a asdf > /dev/null && . <(asdf completion bash)
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
