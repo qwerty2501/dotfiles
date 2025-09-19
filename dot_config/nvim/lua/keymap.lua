@@ -9,7 +9,6 @@ vim.api.nvim_set_keymap("n", "<Leader>g", "<cmd>TestVisit<CR>", default_opts)
 vim.api.nvim_set_keymap("n","<Leader>ibus","<cmd>lua vim.fn.system('ibus engine mozc-jp')<CR>",default_opts)
 
 
-
 vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 vim.keymap.set("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 vim.keymap.set("n", "gr", "<cmd>Trouble diagnostics toggle lsp_references<CR>")

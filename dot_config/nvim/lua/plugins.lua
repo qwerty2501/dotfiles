@@ -30,7 +30,6 @@ require("lazy").setup({
       },
     },
     "APZelos/blamer.nvim",
-    "simrat39/rust-tools.nvim",
     "vim-test/vim-test",
     {"akinsho/toggleterm.nvim", version = "*", config = true},
     "tamago324/nlsp-settings.nvim",
@@ -63,6 +62,11 @@ require("lazy").setup({
     {
       "iamcco/markdown-preview.nvim",
       run = function() vim.fn["mkdp#util#install"]() end,
+    },
+    {
+      "mrcjkb/rustaceanvim",
+      version = "^6",
+      lazy = false,
     },
   },
   install = { colorscheme = { "habamax" } },

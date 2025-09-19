@@ -3,7 +3,6 @@ require("trouble").setup()
 local mason_lspconfig = require("mason-lspconfig")
 mason_lspconfig.setup({
   ensure_installed = {
-    "rust_analyzer",
     "jsonls",
     "ts_ls",
     "html",
@@ -48,7 +47,6 @@ end
 local function on_attach(_, bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-
   vim.api.nvim_create_augroup('lsp_auto_format', {})
   vim.api.nvim_create_autocmd('BufWritePre', {
     group = 'lsp_auto_format',
@@ -61,17 +59,10 @@ local server_opts = {
   on_attach = on_attach,
   capabilities = require("cmp_nvim_lsp").default_capabilities(
     vim.lsp.protocol.make_client_capabilities()
-  )
+  ),
 }
 
 vim.lsp.config("*",server_opts)
-vim.lsp.config.rust_analyzer = {
-  on_init = function(_,_)
-    require("rust-tools").setup({
-      server = server_opts,
-    })
-  end,
-}
 
 vim.cmd [[
 highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
