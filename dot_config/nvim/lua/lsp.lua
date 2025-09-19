@@ -61,6 +61,19 @@ local server_opts = {
     vim.lsp.protocol.make_client_capabilities()
   ),
 }
+vim.g.rustaceanvim = {
+  server = {
+    on_attach=on_attach,
+    capabilities = require("cmp_nvim_lsp").default_capabilities(
+      vim.lsp.protocol.make_client_capabilities()
+    ),
+    default_settings = {
+      ['rust-analyzer'] = {
+      },
+    },
+  }
+}
+vim.lsp.config("rust-analyzer", {})
 
 vim.lsp.config("*",server_opts)
 
