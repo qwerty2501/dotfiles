@@ -33,9 +33,8 @@ fi
 # END ANSIBLE MANAGED BLOCK: asdf
 
 
-if [ type asdf  &> /dev/null ]; then
+if [ -d "${ASDF_DATA_DIR:-$HOME/.asdf}" ];then
  . <(asdf completion bash)
- export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
