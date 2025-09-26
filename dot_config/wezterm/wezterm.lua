@@ -9,13 +9,18 @@ config.hide_tab_bar_if_only_one_tab=true
 
 config.keys = {
   {
+      key = "t",
+      mods = "ALT",
+      action = wezterm.action.SpawnTab "CurrentPaneDomain",
+  },
+  {
       key = ".",
-      mods = "CTRL|ALT",
+      mods = "ALT",
       action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } },
   },
   {
       key = ",",
-      mods = "CTRL|ALT",
+      mods = "ALT",
       action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } },
   },
 
