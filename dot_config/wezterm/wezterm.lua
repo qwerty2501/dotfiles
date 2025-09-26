@@ -6,5 +6,18 @@ config.font = wezterm.font 'PlemolJP Console'
 config.scrollback_lines = 65535
 config.enable_scroll_bar = true
 
+config.keys = {
+  {
+      key = ".",
+      mods = "CTRL|ALT",
+      action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } },
+  },
+  {
+      key = ",",
+      mods = "CTRL|ALT",
+      action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } },
+  },
+
+}
 
 return config
