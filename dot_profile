@@ -8,6 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 # if running bash
+. "$HOME/.posix_env_vars"
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
@@ -15,4 +16,3 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-. "$HOME/.posix_env_vars"
