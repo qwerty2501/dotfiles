@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
+<xkbConfigRegistry version="1.1">
+  <layoutList>
+    <layout>
+      <configItem>
+        <name>pc</name>
+      </configItem>
+      <variantList>
+        <variant>
+          <configItem>
+            <name>myconf</name>
+            <shortDescription>myconf</shortDescription>
+            <description>PC(myconf)</description>
+          </configItem>
+        </variant>
+      </variantList>
+    </layout>
+  </layoutList>

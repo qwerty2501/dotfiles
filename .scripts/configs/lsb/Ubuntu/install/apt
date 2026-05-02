@@ -1,0 +1,17 @@
+uidmap
+tar
+direnv
+tree
+fzf
+jq
+xvkbd
+keepassxc
+libxcb-composite0-dev
+libssl-dev
+pkg-config
+ccls
+cmake-format
+luarocks
+nodejs
+npm
+xclip

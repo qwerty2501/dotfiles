@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+
+export OSH=$HOME/.oh-my-bash
+OSH_THEME="brainy"
+completions=(
+  git
+  composer
+  ssh
+)
+
+
+aliases=(
+  general
+)
+
+plugins=(
+  git
+  bashmarks
+)
+
+source $OSH/oh-my-bash.sh
+eval "$(direnv hook bash)"
+
+if [ -f "$HOME/.bash_aliases" ]; then
+    . "$HOME/.bash_aliases"
+fi
+# END ANSIBLE MANAGED BLOCK: asdf
+
+
+if [ -d "${ASDF_DATA_DIR:-$HOME/.asdf}" ];then
+ . <(asdf completion bash)
+fi
+
+
+
+
+if [ -f "$HOME/.local_bashrc" ] ; then
+		source $HOME/.local_bashrc
+fi
+

@@ -1,0 +1,96 @@
+[atcoder]
+submit_via_binary = false # submit via binary by default
+use_cross = false         # use `cross` instead of `cargo` when generating binaries
+binary_column = 80        # maximum column number of generated binary (0 for no wrapping)
+update_interval = 1000    # interval time of fetching result (ms)
+strip_path = "strip"      # specify `strip` command path. NOTE: if you use macOS, you have to install GNU strip and specify its path here.
+
+[profile]
+# target to use to generate binary
+target = "x86_64-unknown-linux-musl"
+
+[profile.release]
+lto = true
+panic = 'abort'
+
+# dependencies added to new project
+[dependencies]
+proconio = "*"
+# competitive = { git = "https://github.com/tanakh/competitive-rs.git" }
+
+[project]
+# to create `rust-toolchain` file, uncomment this line.
+rustc_version = "1.42.0"
+
+# source code template
+template = """
+#[allow(unused_imports)]
+use proconio::{input, marker::*, source::auto::AutoSource};
+#[allow(unused_imports)]
+use std::cmp::*;
+#[allow(unused_imports)]
+use std::collections::*;
+use std::io::BufRead;
+#[allow(unused_imports)]
+use std::iter::*;
+#[allow(unused_imports)]
+use std::*;
+
+#[allow(unused_mut)]
+fn solve(src: impl BufRead, out: &mut impl std::io::Write) {
+    #[allow(unused_macros)]
+    macro_rules! out {
+        ($arg:expr) => {{
+            let _ = out.write_fmt(format_args!("{}",$arg));
+        }};
+        ($fmt:expr, $($args:tt)*) => {{
+            let _ = out.write_fmt(format_args!($fmt, $($args)*));
+        }};
+    }
+    #[allow(unused_macros)]
+    macro_rules! outln {
+        ($arg:expr) => {{
+            out!("{}\n",$arg);
+        }};
+        ($fmt:expr, $($args:tt)*) => {{
+            out!(concat!($fmt, "\n"), $($args)*);
+        }};
+    }
+
+    input! {
+        from AutoSource::new(src),
+        n:u32,
+    }
+}
+
+macro_rules! test {
+    ($($input:expr => $output:expr),* $(,)*) => {
+#[test]
+        fn solve_test() {
+            $(
+                {
+                    let mut out = Vec::<u8>::new();
+                    #[allow(clippy::string_lit_as_bytes)]
+                    solve($input.as_bytes(),&mut out);
+                    let out_str =str::from_utf8(&out).unwrap();
+                    assert_eq!(&out_str, &$output);
+                }
+            )*
+        }
+    };
+}
+test! {}
+
+#[allow(dead_code)]
+fn to_yesno(yesno: bool) -> &'static str {
+    if yesno {
+        "Yes"
+    } else {
+        "No"
+    }
+}
+
+fn main() {
+    solve(std::io::stdin().lock(), &mut std::io::stdout());
+}
+"""
