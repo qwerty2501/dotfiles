@@ -49,10 +49,12 @@ local function on_attach(client, bufnr)
     vim.api.nvim_create_augroup('lsp_document_highlight', {})
     vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
       group = 'lsp_document_highlight',
+      buffer = bufnr,
       callback = DocumentHighlight
     })
     vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
       group = 'lsp_document_highlight',
+      buffer = bufnr,
       callback = ClearReferences
     })
   end
