@@ -7,7 +7,7 @@ cd /usr/local/share/fonts/
 
 function installPlemolJP() {
   sudo curl -fLO https://github.com/yuru7/PlemolJP/releases/download/v3.0.0/PlemolJP_v3.0.0.zip
-  sudo unzip ./PlemolJP_v3.0.0.zip
+  sudo unzip -o ./PlemolJP_v3.0.0.zip
   sudo rm PlemolJP_v3.0.0.zip
 }
 
