@@ -44,7 +44,18 @@ local function exec_format()
   vim.lsp.buf.format(nil)
 end
 
-local function on_attach(_, bufnr)
+local function on_attach(client, bufnr)
+  if client:supports_method("textDocument/documentHighlight") then
+    vim.api.nvim_create_augroup('lsp_document_highlight', {})
+    vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+      group = 'lsp_document_highlight',
+      callback = DocumentHighlight
+    })
+    vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+      group = 'lsp_document_highlight',
+      callback = ClearReferences
+    })
+  end
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   vim.api.nvim_create_augroup('lsp_auto_format', {})
@@ -98,17 +109,6 @@ function ClearReferences()
   end
 end
 
-if client.supports_method("textDocument/documentHighlight") then
-  vim.api.nvim_create_augroup('lsp_document_highlight', {})
-  vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-    group = 'lsp_document_highlight',
-    callback = DocumentHighlight
-  })
-  vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-    group = 'lsp_document_highlight',
-    callback = ClearReferences
-  })
-end
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
