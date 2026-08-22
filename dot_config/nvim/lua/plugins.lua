@@ -17,7 +17,7 @@ require("lazy").setup({
     "neovim/nvim-lspconfig",
     "williamboman/mason.nvim",
     "mfussenegger/nvim-dap",
-    "nvimtools/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "tpope/vim-fugitive",
